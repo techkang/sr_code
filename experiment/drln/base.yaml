@@ -1,0 +1,7 @@
+dataset:
+  train:  DIV2K/train
+  test: Set14
+model:
+  name: DRLN
+dataloader:
+  batch_size: 16

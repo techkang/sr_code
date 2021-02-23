@@ -1,0 +1,16 @@
+scikit-image
+scikit-video
+torchvision
+tqdm
+msgpack>=1.0.0
+termcolor
+yacs
+ipdb
+opencv-python
+numpy
+torch
+scipy
+Pillow
+imgaug
+tensorboard
+moviepy

@@ -1,0 +1,9 @@
+datasets:
+  train: DIV2K/train
+  test: Set5
+model:
+  name: PANet
+dataloader:
+  batch_size: 100
+solver:
+  chop_size: 32

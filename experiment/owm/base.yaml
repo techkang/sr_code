@@ -1,0 +1,10 @@
+dataset:
+  train: DIV2K/train
+  test: Set14
+model:
+  name: RefineOWM
+dataloader:
+  batch_size: 40
+
+trainer:
+  RefineTrainer

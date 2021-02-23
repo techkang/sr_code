@@ -1,0 +1,14 @@
+dataset:
+  train:  DIV2K/train
+  test: Set5
+cyclesr:
+  train_real:
+    - RealSR/
+  test_real:
+    - RealSR/
+model:
+  name: CycleSR
+dataloader:
+  batch_size: 4
+trainer:
+  CycleTrainer

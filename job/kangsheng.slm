@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH --job-name=sr
+#SBATCH --gres=gpu:4
+#SBATCH --output=slm_out/0_5.out
+echo "Submitted from:"$SLURM_SUBMIT_DIR" on node:"$SLURM_SUBMIT_HOST
+echo "Running on node "$SLURM_JOB_NODELIST
+echo "Allocate Gpu Units:"$CUDA_VISIBLE_DEVICES
+##program here ##
+export JOB_HOME=/ghome/kangsheng/sr_code
+export CONFIG="$JOB_HOME/experiment/edsr/base.yaml"
+export BASE_CONFIG="output_dir /gdata/kangsheng/output/sr_code dataset.path /gdata/kangsheng/dataset num_gpus 4"
+export TRAIN_ARGS="log_name a=-0.5 dataset.cubic_a -0.5"
+startdocker -D /gdata/kangsheng -P $JOB_HOME -u "--ipc=host" -c "/usr/local/bin/python $JOB_HOME/train.py --config-file $CONFIG $BASE_CONFIG $TRAIN_ARGS" bit:5000/kangsheng_torch1.6

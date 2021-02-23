@@ -1,0 +1,7 @@
+datasets:
+  train: DIV2K/train
+  test: Set5
+model:
+  name: MIRNet
+dataloader:
+  batch_size: 4
